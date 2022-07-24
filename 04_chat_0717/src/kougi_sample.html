@@ -1,0 +1,51 @@
+import "./styles.css";
+import { useState } from "react";
+
+const Img =
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHmk6Ew6jjOOQtzoVn43VBjy1Y2NSY1vCiA&usqp=CAU";
+
+export default function App() {
+  //
+  // const test = () => {
+  //   alert(1);
+  //   // 動くと、画面上にポップアップみたいなのが
+  //   // 表示されるものでそれをalrt()といいます
+  // };
+
+  const henka = () => {
+    setA(!a);
+  };
+
+  // useStateについて記述
+  const [a, setA] = useState(true);
+  //a =　1が入っています
+  //
+  return (
+    <div className="App">
+      <h1>{a}</h1>
+
+      <button onClick={henka}>押したらどうなる</button>
+
+      <hr />
+
+      {a === true && (
+        <h1>１が出ています</h1>
+      )}
+      {a === false && (
+        <h1>2が出ています</h1>
+      )}
+      {/* <h1>React01回目</h1>
+      <h2>react勉強中です</h2>
+      <img
+        src="data:image/png;base64,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"
+        alt="ジーズアカデミーのロゴ"
+      />
+
+      <img src={Img} alt="" />
+      <p className="morita">reactのcssの当て方（classについて諸注意）</p>
+
+      <div onDoubleClick={test}>click</div> */}
+    </div>
+  );
+}
+17:15
